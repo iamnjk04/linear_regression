@@ -1,28 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-'''load the dataset separeted by delimeters'''
-data = np.loadtxt("data.txt", delimiter = ",")
-
-'''
-data X for the square root and Y for the price
-.reshape(X.size,1) for reshapig the Y without changing its value
-.vstack vertically sequence the array 
-.ones gives the array filled with ones and .T for transpose
-'''
-X = data[:, 0]
-Y = data[:, 1].reshape(X.size, 1)
-X = np.vstack((np.ones((X.size, )), X)).T
-
-'''
-.shape to see the shape of X and Y
-'''
-print(X.shape)
-print(Y.shape)
-
-plt.scatter(X[:, 1], Y)
-plt.show()
-
 '''
 theta contains zeros of shape (2,1)
 cost list is just to store the cost value at every iteration
